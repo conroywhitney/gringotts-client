@@ -1,0 +1,7 @@
+== Gringotts Client Example
+
+This is an example of how to utilize the [gringotts gem](http://github.io) in your application.
+
+This barebones example was created using the [railsapp example tutorial](http://railsapps.github.io/tutorial-rails-devise-rspec-cucumber.html) using Ruby 1.9.3 and Rails 3.2.14 to ensure it is as universal as possible.
+
+
