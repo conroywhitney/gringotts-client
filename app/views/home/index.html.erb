@@ -1,1 +1,7 @@
 <h1>Gringotts Client Example</h1>
+
+<%- if current_user.present? -%>
+  Signed in as: <%= current_user.email %>
+<%- else -%>
+  Not signed in
+<%- end -%>
