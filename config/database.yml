@@ -18,11 +18,8 @@ test: &test
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/gringotts-client-production.sqlite3
-  pool: 5
-  timeout: 5000
+#production:
+# heroku will be handling our DB connection, thank you very much
 
 cucumber:
   <<: *test
