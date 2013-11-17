@@ -1,7 +1,19 @@
-<h1>Gringotts Client Example</h1>
+<% content_for :header do %>
+  <img src="http://semantic-ui.com/build/examples/images/cat.png" class="ui medium image">
+  <div class="ui hidden transition information">
+    <h1 class="ui inverted header">
+      Your Cat is Dumb
+    </h1>
+    <p>At least he won't reach his highest potential unless you enroll him in Cat University's 2013 class.</p>
+    <div class="large basic inverted animated fade ui button">
+      <div class="visible content">Come to ICU 2013</div>
+      <div class="hidden content">Register Now</div>
+    </div>
+  </div>
+<% end %>
 
-<%- if current_user.present? -%>
-  Signed in as: <%= current_user.email %>
-<%- else -%>
-  Not signed in
-<%- end -%>
+<%= render partial: "features" %>
+
+<%= render partial: "cta" %>
+
+<%= render partial: "testimonials" %>
