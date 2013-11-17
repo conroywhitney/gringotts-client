@@ -5,7 +5,7 @@ gem 'rails', '4.0.0'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'thin'
+  gem 'webrick'
 end
 
 group :production do
