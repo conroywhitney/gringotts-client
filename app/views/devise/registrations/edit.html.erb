@@ -24,41 +24,55 @@
           </div>
         </div>
         
-        <div class="field">
-          <%= f.label :password %>
-          <div class="ui left labeled icon input">
-            <%= f.password_field :password %>
-            <i class="lock icon"></i>
-            <div class="ui corner label">
-              <i class="icon asterisk"></i>
+        <div class="ui two fields">
+          <div class="field">
+            <%= f.label :password, "New Password" %>
+            <div class="ui left labeled icon input">
+              <%= f.password_field :password %>
+              <i class="lock icon"></i>
+              <div class="ui corner label">
+                <i class="icon asterisk"></i>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div class="field">
-          <%= f.label :password_confirmation %>
-          <div class="ui left labeled icon input">
-            <%= f.password_field :password_confirmation %>
-            <i class="lock icon"></i>
-            <div class="ui corner label">
-              <i class="icon asterisk"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <%= f.label :current_password %>
-          <i>(we need your current password to confirm your changes)</i>
-          <div class="ui left labeled icon input">
-            <%= f.password_field :current_password %>
-            <i class="lock icon"></i>
-            <div class="ui corner label">
-              <i class="icon asterisk"></i>
+          
+          <div class="field">
+            <%= f.label :password_confirmation, "Confirm New Password" %>
+            <div class="ui left labeled icon input">
+              <%= f.password_field :password_confirmation %>
+              <i class="lock icon"></i>
+              <div class="ui corner label">
+                <i class="icon asterisk"></i>
+              </div>
             </div>
           </div>
         </div>
       
-        <%= f.submit "Update", class: "ui blue submit button" %>
+        <div class="field">
+          <div class="ui slider checkbox">
+            <%= f.check_box :contactable %>
+            <%= f.label :contactable, "Keep me updated on developments with Gringotts" %>
+          </div>
+        </div>
+      
+        <div class="ui two fields">
+          <p>Please enter your current password to confirm your changes</p>
+          
+          <div class="field">
+            <div class="ui left labeled icon input">
+              <%= f.password_field :current_password %>
+              <i class="lock icon"></i>
+              <div class="ui corner label">
+                <i class="icon asterisk"></i>
+              </div>
+            </div>
+          </div>
+        
+          <div class="field">
+            <%= f.submit "Update Account", class: "ui blue submit button" %>
+          </div>
+          
+        </div>
       
       <% end %>
     </div> <!-- /form -->

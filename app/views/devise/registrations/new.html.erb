@@ -46,6 +46,13 @@
           </div>
         </div>
         
+        <div class="field">
+          <div class="ui slider checkbox">
+            <%= f.check_box :contactable %>
+            <%= f.label :contactable, "Keep me updated on developments with Gringotts" %>
+          </div>
+        </div>
+      
         <%= f.submit "Sign Up", class: "ui blue submit button" %>
       
       <% end %>
