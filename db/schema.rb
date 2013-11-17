@@ -13,6 +13,59 @@
 
 ActiveRecord::Schema.define(version: 20131117110634) do
 
+  create_table "gringotts_attempts", force: true do |t|
+    t.integer  "vault_id",                      null: false
+    t.string   "code_received",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "successful",    default: false, null: false
+  end
+
+  add_index "gringotts_attempts", ["vault_id"], name: "index_gringotts_attempts_on_vault_id"
+
+  create_table "gringotts_codes", force: true do |t|
+    t.integer  "vault_id",   null: false
+    t.string   "value",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "expires_at"
+  end
+
+  add_index "gringotts_codes", ["vault_id"], name: "index_gringotts_codes_on_vault_id"
+
+  create_table "gringotts_deliveries", force: true do |t|
+    t.integer  "vault_id",       null: false
+    t.integer  "code_id",        null: false
+    t.string   "strategy_class", null: false
+    t.string   "phone_number",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "delivered_at"
+    t.string   "error_message"
+  end
+
+  add_index "gringotts_deliveries", ["vault_id"], name: "index_gringotts_deliveries_on_vault_id"
+
+  create_table "gringotts_settings", force: true do |t|
+    t.integer  "vault_id",                     null: false
+    t.boolean  "active",       default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "phone_number"
+  end
+
+  add_index "gringotts_settings", ["vault_id"], name: "index_gringotts_settings_on_vault_id", unique: true
+
+  create_table "gringotts_vaults", force: true do |t|
+    t.integer  "owner_id",       null: false
+    t.datetime "locked_at"
+    t.string   "owner_type"
+    t.datetime "prompt_seen_at"
+    t.datetime "confirmed_at"
+  end
+
+  add_index "gringotts_vaults", ["owner_id", "owner_type"], name: "index_gringotts_vaults_on_owner_id_and_owner_type", unique: true
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",   null: false
     t.string   "encrypted_password",     default: "",   null: false

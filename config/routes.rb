@@ -5,7 +5,8 @@ GringottsClient::Application.routes.draw do
 
   root :to => "home#index"
   
-
+  mount Gringotts::Engine => "/authentication", :as => :gringotts_engine
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
