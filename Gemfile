@@ -8,6 +8,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'thin'
 end
 
 gem 'sass-rails',   '>= 3.2.3'
