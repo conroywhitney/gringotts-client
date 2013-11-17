@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 group :development, :test do
@@ -9,6 +10,7 @@ end
 group :production do
   gem 'pg'
   gem 'thin'
+  gem 'rails_12factor'
 end
 
 gem 'sass-rails',   '>= 3.2.3'
