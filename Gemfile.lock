@@ -1,7 +1,8 @@
-PATH
-  remote: /home/action/workspace/gringotts
+GIT
+  remote: git://github.com/conroywhitney/gringotts
+  revision: 578a8279788f16fcf812c4e8e438eeadf2b8df3d
   specs:
-    gringotts (0.6.0)
+    gringotts (0.6.1)
       phony_rails
       rails (>= 3.1.0)
       twilio-rb
