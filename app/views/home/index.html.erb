@@ -2,15 +2,14 @@
   <img src="http://semantic-ui.com/build/examples/images/cat.png" class="ui medium image">
   <div class="ui hidden transition information">
     <h1 class="ui inverted header">
-      O hai!
+      <%= @current_step[:greeting] %>
     </h1>
     <p>This app demonstrates <a href="https://github.com/conroywhitney/gringotts">Gringotts 2FA Phone Verification</a> for Rails</p>
-    <a href="/users/sign_up" class="large blue inverted animated fade ui button">
-      <div class="visible content">Begin the Demonstration</div>
-      <div class="hidden content">by Creating an Account</div>
+    <a href="<%= @current_step[:target] %>" class="large blue inverted ui button">
+      <%= @current_step[:cta] %>
     </a>
     <a href="https://github.com/conroywhitney/gringotts" class="large white inverted animated fade ui button">
-      Check out the Gem
+      Add Gringotts to Your App
     </a>
   </div>
 <% end %>
