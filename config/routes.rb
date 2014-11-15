@@ -5,6 +5,11 @@ GringottsClient::Application.routes.draw do
 
   root :to => "home#index"
   
+  # creates an /authentication virtual directory in our application
+  # maps the virtual directory to the engine created by the gringotts gem
+  # gringotts_engine used to access aspects of Gringotts::Engine (e.g., named routes)
+  mount Gringotts::Engine => "/authentication", :as => :gringotts_engine
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

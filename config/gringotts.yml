@@ -1,0 +1,31 @@
+twilio_settings: &twilio_settings
+  from_number: <%= ENV["GRINGOTTS_TWILIO_FROM_NUMBER"] %>
+  account_sid: <%= ENV["GRINGOTTS_TWILIO_ACCOUNT_SID"] %>
+  auth_token:  <%= ENV["GRINGOTTS_TWILIO_AUTH_TOKEN"] %>
+
+delivery_settings: &delivery_settings
+  enabled: true
+  phone_number_override: <%= ENV["GRINGOTTS_PHONE_NUMBER_OVERRIDE"] %>
+
+defaults: &defaults
+  enabled: true
+  delivery:
+    <<: *delivery_settings
+  twilio:
+    <<: *twilio_settings
+  ignore_paths:
+    - /users/sign_out
+    - /users/sign_in
+
+development:
+  <<: *defaults
+  delivery:
+    <<: *delivery_settings
+    enabled: true
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  enabled: true
