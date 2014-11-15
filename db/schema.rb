@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20131117110634) do
   end
 
   add_index "gringotts_vaults", ["owner_id", "owner_type"], name: "index_gringotts_vaults_on_owner_id_and_owner_type", unique: true
+  add_index "gringotts_vaults", ["owner_id"], name: "index_gringotts_vaults_on_owner_id", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",   null: false
@@ -77,8 +78,8 @@ ActiveRecord::Schema.define(version: 20131117110634) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "contactable",            default: true
   end
 
